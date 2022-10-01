@@ -1,0 +1,30 @@
+.articleWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 4.125rem;
+  width: 46rem;
+}
+
+.data {
+  display: flex;
+  gap: .5rem;
+  font-weight: 700;
+  font-size: .875rem;
+}
+
+.blueText {
+  color: var(--blue-300);
+}
+
+.purpleText {
+  color: var(--purple-300);
+}
+
+.chip {
+  padding: .125rem .5rem;
+  border-radius: 999px;
+
+  background: var(--gray-400);
+  color: var(--white);
+}

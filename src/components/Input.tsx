@@ -10,7 +10,14 @@ export function Input() {
   return (
     <form onSubmit={handleSubmit} className={ styles.formWrapper }>
       <input type="text" placeholder="Adicione uma nova tarefa" />
-      <button type="submit">Criar <PlusCircle weight="bold" size={16} className={ styles.middleIcon }/></button>
+      <button type="submit">
+        <p>Criar</p>
+        <PlusCircle 
+          weight="bold" 
+          size={20} 
+          className={ styles.middleIconInButton }
+        />
+      </button>
     </form>
   );
 }

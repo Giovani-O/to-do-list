@@ -1,8 +1,6 @@
-import { useState } from 'react'
 import { Header } from './components/Header';
 import { Input } from './components/Input';
-
-import reactLogo from './assets/react.svg'
+import { Progress } from './components/Progress';
 
 import './App.css';
 import './global.css';
@@ -13,6 +11,7 @@ export function App() {
     <main>
       <Header />
       <Input />
+      <Progress />
     </main>
   )
 }
