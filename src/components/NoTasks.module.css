@@ -1,0 +1,21 @@
+.articleWrapper {
+  width: 46rem;
+  margin: auto;
+  border-top: 1px solid var(--gray-400);
+}
+
+.articleWrapper div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4.0rem;
+  gap: 1rem;
+}
+
+.articleWrapper div img {
+  width: 3.5rem;
+  margin: auto;
+}
+
+.articleWrapper div p {
+  text-align: center;
+}
