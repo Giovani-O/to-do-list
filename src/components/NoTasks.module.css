@@ -18,4 +18,5 @@
 
 .articleWrapper div p {
   text-align: center;
+  color: var(--gray-300);
 }
