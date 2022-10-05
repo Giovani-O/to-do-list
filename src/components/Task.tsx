@@ -1,18 +1,32 @@
-import { Trash } from 'phosphor-react';
+import { Trash, CheckCircle, Circle } from 'phosphor-react';
+import { useState } from 'react';
 import styles from './Task.module.css';
 
-export function Task() {
+
+interface Tasks {
+  id: string;
+  content: string;
+  isComplete: number;
+  onCompleteTask: (completed: number, id: string) => void;
+}
+
+export function Task( { id, content, isComplete, onCompleteTask }: Tasks) {
+  function handleCheckboxState() {
+    onCompleteTask(isComplete, id);
+  }
+
   return (
     <article className={ styles.articleWrapper }>
-      <div className={ styles.checkboxContainer }>
-        <div className={ styles.customCheckbox }>
-          <input type="checkbox" id="completedCheckbox"/>
-          <label htmlFor="completedCheckbox"></label>
-        </div>
+      <div className={ styles.checkboxContainer } onClick={ handleCheckboxState }>
+        {
+          isComplete === 0 
+            ? <Circle size={24} weight="bold" color="var(--blue-300)"/>
+            : <CheckCircle size={24} weight="fill" color="var(--purple-500)" />
+        }
       </div>
 
       <div className={ styles.contentContainer }>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum dicta doloremque adipisci, cupiditate iste commodi! Voluptatibus, dolore. Doloremque repellat excepturi doloribus voluptatum tempora impedit ut praesentium nobis, qui, dolores quos!</p>
+        <p>{ content }</p>
       </div>
 
       <div className={ styles.deleteContainer}>
