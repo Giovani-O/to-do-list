@@ -16,23 +16,7 @@ export function App() {
     isComplete: number;
   }
 
-  const [tasks, setTasks] = useState<TaskModel[]>([
-    {
-      id: uuidv4(),
-      content: 'Lorem ipsum dolor sit amet',
-      isComplete: 0
-    },
-    {
-      id: uuidv4(),
-      content: 'Lorem ipsum dolor sit amet proferetur',
-      isComplete: 0
-    },
-    {
-      id: uuidv4(),
-      content: 'Lorem ipsum dolor sit amet quo totum continetur',
-      isComplete: 0
-    }
-  ]);
+  const [tasks, setTasks] = useState<TaskModel[]>([]);
 
   function completeTask(isComplete: number, id: string) {
     let updatedTasks = tasks.map(task => {
@@ -47,10 +31,19 @@ export function App() {
     console.log(tasks);
   }
 
+  function addTask(task: string) {
+    const newTask: TaskModel = {
+      id: uuidv4(),
+      content: task,
+      isComplete: 0,
+    }
+    setTasks([...tasks, newTask]);
+  }
+
   return (
     <main>
       <Header />
-      <Input />
+      <Input addTask={addTask}/>
       <Progress />
 
       { 
