@@ -50,7 +50,14 @@ export function App() {
     <main>
       <Header />
       <Input addTask={addTask}/>
-      <Progress />
+      <Progress 
+        total={tasks.length} 
+        completedTotal={
+          tasks.filter(task => {
+            return task.isComplete === 1
+          }).length
+        }
+      />
 
       { 
         tasks.length === 0 
