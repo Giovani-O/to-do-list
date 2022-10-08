@@ -26,7 +26,7 @@ export function Task( { id, content, isComplete, onCompleteTask }: Tasks) {
       </div>
 
       <div className={ styles.contentContainer }>
-        <p>{ content }</p>
+        <p className={ isComplete === 0 ? styles.regularText : styles.textLineThrough }>{ content }</p>
       </div>
 
       <div className={ styles.deleteContainer}>

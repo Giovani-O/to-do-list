@@ -29,9 +29,17 @@
 }
 
 .contentContainer p {
-  color: var(--gray-100);
   font-weight: 400;
   font-size: .875rem;
+}
+
+.regularText {
+  color: var(--gray-100);
+}
+
+.textLineThrough {
+  color: var(--gray-300);
+  text-decoration: line-through;
 }
 
 .deleteContainer {

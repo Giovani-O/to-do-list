@@ -26,9 +26,7 @@ export function App() {
         isComplete: task.isComplete === 0 ? 1 : 0,
       } : task
     })
-    console.log(updatedTasks);
     setTasks(updatedTasks);
-    console.log(tasks);
   }
 
   function addTask(task: string) {
