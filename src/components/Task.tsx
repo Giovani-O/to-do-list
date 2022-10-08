@@ -1,5 +1,5 @@
 import { Trash, CheckCircle, Circle } from 'phosphor-react';
-import { useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import styles from './Task.module.css';
 
 
@@ -8,11 +8,16 @@ interface Tasks {
   content: string;
   isComplete: number;
   onCompleteTask: (completed: number, id: string) => void;
+  onDeleteTask: (id: string) => void;
 }
 
-export function Task( { id, content, isComplete, onCompleteTask }: Tasks) {
+export function Task( { id, content, isComplete, onCompleteTask, onDeleteTask }: Tasks) {
   function handleCheckboxState() {
     onCompleteTask(isComplete, id);
+  }
+
+  function handleDelete(event: MouseEvent<HTMLDivElement>) {
+    onDeleteTask(id);
   }
 
   return (
@@ -26,11 +31,13 @@ export function Task( { id, content, isComplete, onCompleteTask }: Tasks) {
       </div>
 
       <div className={ styles.contentContainer }>
-        <p className={ isComplete === 0 ? styles.regularText : styles.textLineThrough }>{ content }</p>
+        <p className={ isComplete === 0 ? styles.regularText : styles.textLineThrough }>
+          { content }
+        </p>
       </div>
 
-      <div className={ styles.deleteContainer}>
-        <Trash size={24} color="var(--gray-300)"/>
+      <div className={ styles.deleteContainer} onClick={ handleDelete }>
+        <Trash size={24} className={ styles.deleteButton } />
       </div>
     </article>
   );

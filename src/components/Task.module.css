@@ -49,3 +49,12 @@
   justify-content: flex-end;
   cursor: pointer;
 }
+
+.deleteButton {
+  color: var(--gray-300);
+  transition: color .1s;
+}
+
+.deleteButton:hover {
+  color: var(--red-500);
+}

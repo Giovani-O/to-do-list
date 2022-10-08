@@ -38,6 +38,14 @@ export function App() {
     setTasks([...tasks, newTask]);
   }
 
+  function deleteTask(id: string) {
+    const tasksWithoutDeletedOne = tasks.filter(task => {
+      return task.id !== id;
+    })
+
+    setTasks([...tasksWithoutDeletedOne]);
+  }
+
   return (
     <main>
       <Header />
@@ -54,6 +62,7 @@ export function App() {
                 content={task.content} 
                 isComplete={task.isComplete}
                 onCompleteTask={completeTask}
+                onDeleteTask={deleteTask}
               />
             }
           ) 
