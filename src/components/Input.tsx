@@ -11,7 +11,8 @@ export function Input({ addTask }: InputProps) {
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
-    addTask(newTaskText);
+    newTaskText ? addTask(newTaskText) : console.log('Input is empty');
+    setNewTaskText('');
   }
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
@@ -26,6 +27,7 @@ export function Input({ addTask }: InputProps) {
         placeholder="Adicione uma nova tarefa" 
         name="taskInput"
         onChange={handleChange}
+        value={newTaskText}
         required
       />
       <button type="submit">

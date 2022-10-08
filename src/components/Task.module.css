@@ -22,6 +22,11 @@
   align-items: flex-start;
 }
 
+.checkboxContainer img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .contentContainer {
   width: 39.5rem;
   display: flex;

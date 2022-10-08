@@ -1,5 +1,7 @@
-import { Trash, CheckCircle, Circle } from 'phosphor-react';
+import { Trash } from 'phosphor-react';
 import { MouseEvent, useState } from 'react';
+import Checked from './../assets/checked.svg'
+import Unchecked from './../assets/unchecked.svg'
 import styles from './Task.module.css';
 
 
@@ -25,8 +27,8 @@ export function Task( { id, content, isComplete, onCompleteTask, onDeleteTask }:
       <div className={ styles.checkboxContainer } onClick={ handleCheckboxState }>
         {
           isComplete === 0 
-            ? <Circle size={24} weight="bold" color="var(--blue-300)"/>
-            : <CheckCircle size={24} weight="fill" color="var(--purple-500)" />
+            ? <img src={ Unchecked } />
+            : <img src={ Checked } />
         }
       </div>
 
