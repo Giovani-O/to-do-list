@@ -1,6 +1,9 @@
 # to-do-list
 First challenge from Rocketseat's Ignite, a to do list developed with React and TypeScript.
 
+### Future plans
+- Add proper responsiveness;
+
 ### The list starts empty
 ![image](https://user-images.githubusercontent.com/50748653/194683898-68330917-753c-4fd5-82bb-f0a34ea229bd.png)
 
